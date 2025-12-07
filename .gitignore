@@ -1,0 +1,8 @@
+config.def.h.orig
+drw.o
+dwm
+dwm.1.orig
+dwm.c.orig
+dwm.c.rej
+dwm.o
+util.o
