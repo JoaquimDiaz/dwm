@@ -65,15 +65,15 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { 
-    "dmenu_run", 
-    "-m", dmenumon, 
-    "-fn", dmenufont, 
-    "-nb", col_gray1, 
-    "-nf", col_gray3, 
-    "-sb", col_cyan, 
-    "-sf", col_gray4, 
-    NULL 
+static const char *dmenucmd[] = {
+    "dmenu_run",
+    "-m", dmenumon,
+    "-fn", dmenufont,
+    "-nb", col_gray1,
+    "-nf", col_gray3,
+    "-sb", col_cyan,
+    "-sf", col_gray4,
+    NULL
 };
 static const char *termcmd[]  = { "alacritty", NULL };
 
@@ -108,13 +108,14 @@ static const Key keys[] = {
     { 0,                            XF86XK_AudioLowerVolume, spawn, SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%") },
     { 0,                            XF86XK_AudioMute,        spawn, SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle") },
 
-    /* notes shorcuts */
-	{ MODKEY,                       XK_t,      spawn,      SHCMD("notes-dmenu") },
-	{ MODKEY,                       XK_n,      spawn,      SHCMD("todo-dmenu") },
+    /* dmenu scripts */
+	{ MODKEY,                       XK_w,      spawn,      SHCMD("/home/jo/nixos-config/scripts/dmenu/dm-websearch") },
+	{ MODKEY,                       XK_y,      spawn,      SHCMD("/home/jo/nixos-config/scripts/dmenu/dm-ytsearch") },
+	{ MODKEY,                       XK_o,      spawn,      SHCMD("/home/jo/nixos-config/scripts/dmenu/dm-start") },
 
     /* Screenshot keybinds */
-    { MODKEY,                       XK_z, spawn, SHCMD("flameshot gui --clipboard") },
-    { MODKEY,                       XK_s, spawn, SHCMD("save-clip-screenshot") },
+  { MODKEY,                       XK_z, spawn, SHCMD("flameshot gui --clipboard") },
+  { MODKEY,                       XK_s, spawn, SHCMD("save-clip-screenshot") },
 
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
@@ -126,7 +127,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
+	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} },
 };
 
 /* button definitions */
