@@ -1,4 +1,5 @@
 config.def.h.orig
+config.h
 drw.o
 dwm
 dwm.1.orig
