@@ -9,8 +9,8 @@ static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=14" };
-static const char dmenufont[]       = "JetBrainsMono Nerd Font:size=14";
+static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=12" };
+static const char dmenufont[]       = "JetBrainsMono Nerd Font:size=16";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -34,6 +34,9 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
+
+    { "bluetui",  "bluetui",  NULL,       0,            1,           -1 },
+    { "Thunar",   NULL,       NULL,       0,            1,           -1 },
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
 };
@@ -81,7 +84,7 @@ static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-	{ MODKEY,                       XK_b,      togglebar,      {0} },
+	{ MODKEY,                       XK_f,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
@@ -91,7 +94,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
+	// { MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
@@ -109,6 +112,7 @@ static const Key keys[] = {
     { 0,                            XF86XK_AudioMute,        spawn, SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle") },
 
     /* dmenu scripts */
+	{ MODKEY,                       XK_b,      spawn,      SHCMD("alacritty --class bluetui,bluetui -e bluetui") },
 	{ MODKEY,                       XK_w,      spawn,      SHCMD("/home/jo/nixos-config/scripts/dmenu/dm-websearch") },
 	{ MODKEY,                       XK_y,      spawn,      SHCMD("/home/jo/nixos-config/scripts/dmenu/dm-ytsearch") },
 	{ MODKEY,                       XK_o,      spawn,      SHCMD("/home/jo/nixos-config/scripts/dmenu/dm-start") },
@@ -127,7 +131,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} },
+	{ MODKEY|ShiftMask,             XK_r,      quit,           {1} },
 };
 
 /* button definitions */
