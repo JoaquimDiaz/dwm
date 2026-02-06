@@ -82,7 +82,7 @@ static const char *termcmd[]  = { "alacritty", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	// { MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_f,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
@@ -106,20 +106,18 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 
-    /* Volume keybinds*/
-    { 0,                            XF86XK_AudioRaiseVolume, spawn, SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%") },
-    { 0,                            XF86XK_AudioLowerVolume, spawn, SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%") },
-    { 0,                            XF86XK_AudioMute,        spawn, SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle") },
-
-    /* dmenu scripts */
-	{ MODKEY,                       XK_b,      spawn,      SHCMD("alacritty --class bluetui,bluetui -e bluetui") },
-	{ MODKEY,                       XK_w,      spawn,      SHCMD("/home/jo/nixos-config/scripts/dmenu/dm-websearch") },
-	{ MODKEY,                       XK_y,      spawn,      SHCMD("/home/jo/nixos-config/scripts/dmenu/dm-ytsearch") },
-	{ MODKEY,                       XK_o,      spawn,      SHCMD("/home/jo/nixos-config/scripts/dmenu/dm-start") },
-
-    /* Screenshot keybinds */
-  { MODKEY,                       XK_z, spawn, SHCMD("flameshot gui --clipboard") },
-  { MODKEY,                       XK_s, spawn, SHCMD("save-clip-screenshot") },
+	//    /* Volume keybinds*/
+	//    { 0,                            XF86XK_AudioRaiseVolume, spawn, SHCMD("pactl set-sink-volume @DEFAULT_SINK@ +5%") },
+	//    { 0,                            XF86XK_AudioLowerVolume, spawn, SHCMD("pactl set-sink-volume @DEFAULT_SINK@ -5%") },
+	//    { 0,                            XF86XK_AudioMute,        spawn, SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle") },
+	//
+	//    /* dmenu scripts */
+	// { MODKEY,                       XK_b,      spawn,      SHCMD("alacritty --class bluetui,bluetui -e bluetui") },
+	// { 0,                            XK_Print,  spawn,      SHCMD("/home/coco/script/redshift.sh")                },
+	// { MODKEY,                       XK_o,      spawn,      SHCMD("/home/jo/nixos-config/scripts/dmenu/dm-start") },
+	//
+	//    /* Screenshot keybinds */
+	//    { MODKEY|ShiftMask,             XK_s,      spawn,      SHCMD("/home/coco/script/screenshot-maim.sh") },
 
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
