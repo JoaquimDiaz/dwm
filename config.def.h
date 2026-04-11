@@ -5,7 +5,7 @@
 #define SESSION_FILE "/tmp/dwm-session"
 
 /* appearance */
-static const unsigned int borderpx  = 3;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -17,13 +17,13 @@ static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
 static const char col_orange[]      = "#CB4519";
-static const char col_red[]         = "#FF6863";
+static const char col_red[]         = "#fe0104";
 static const char col_yellow[]      = "#f1fa8c";
 
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_gray1, col_cyan  },
+	[SchemeSel]  = { col_gray4, col_gray1, col_red  },
 };
 
 /* tagging */
