@@ -845,6 +845,8 @@ void focusmon(const Arg *arg) {
   unfocus(selmon->sel, 0);
   selmon = m;
   focus(NULL);
+  // if (!selmon->sel)
+  //   XSetInputFocus(dpy, selmon->barwin, RevertToPointerRoot, CurrentTime);
 }
 
 void focusstack(const Arg *arg) {
